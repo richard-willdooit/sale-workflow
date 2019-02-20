@@ -13,7 +13,7 @@
     "website": "https://github.com/OCA/sale-workflow/tree/11.0/sale_order_line_sequence", # noqa
     "license": "AGPL-3",
     'data': ['views/sale_view.xml',
-             'views/report_saleorder.xml'],
+             ],
     "depends": [
         "sale",
     ],
