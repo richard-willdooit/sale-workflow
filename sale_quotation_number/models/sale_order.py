@@ -19,7 +19,7 @@ class SaleOrder(models.Model):
         return super().create(vals)
 
     @api.multi
-    def action_confirm(self):
+    def _action_confirm(self):
         # allocate new number before confirm - as reference on MTO orders
         # should be the sale number, not the quote number
         company = self.env['res.company']. \
@@ -35,7 +35,7 @@ class SaleOrder(models.Model):
                     'name': self.env['ir.sequence'].next_by_code(
                         'sale.order')
                 })
-        return super().action_confirm()
+        return super()._action_confirm()
 
     @api.multi
     @api.returns('self', lambda value: value.id)
